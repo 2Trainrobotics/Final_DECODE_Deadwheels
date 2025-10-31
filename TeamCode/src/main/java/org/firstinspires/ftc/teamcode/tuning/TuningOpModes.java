@@ -129,7 +129,7 @@ public final class TuningOpModes {
 
         DriveViewFactory dvf;
         if (DRIVE_CLASS.equals(MecanumDrive.class)) {
-            dvf = hardwareMap -> {
+            dvf = hardwareMap ->  {
                 MecanumDrive md = new MecanumDrive(hardwareMap, new Pose2d(0, 0, 0));
                 LazyImu lazyImu = md.lazyImu;
 
@@ -180,7 +180,7 @@ public final class TuningOpModes {
                 }
 
                 return new DriveView(
-                    DriveType.MECANUM,
+                        DriveType.MECANUM,
                         MecanumDrive.PARAMS.inPerTick,
                         MecanumDrive.PARAMS.maxWheelVel,
                         MecanumDrive.PARAMS.minProfileAccel,
