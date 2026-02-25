@@ -23,7 +23,20 @@ public class Intake {
         }
      }
 
+     public class IntakeOff implements Action {
+
+        @Override
+         public boolean run(@NonNull TelemetryPacket telemetryPacket){
+            intake.setPower(0);
+            return false;
+        }
+     }
+
      public Action intakeCollect() {
         return new IntakeCollect();
+     }
+
+     public Action intakeOff() {
+        return new IntakeOff();
      }
 }
