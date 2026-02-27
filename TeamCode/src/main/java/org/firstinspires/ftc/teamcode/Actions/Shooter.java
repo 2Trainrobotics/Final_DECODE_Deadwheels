@@ -24,7 +24,7 @@ public class Shooter {
 
         @Override
         public boolean run(@NonNull TelemetryPacket telemetryPacket) {
-            shooter.setShooterVelocity(1250);
+            shooter.setShooterVelocity(1000);
             return false;
         }
     }
@@ -35,7 +35,7 @@ public class Shooter {
 
         @Override
         public boolean run(@NonNull TelemetryPacket telemetryPacket) {
-            shooter.setShooterVelocity(1500);
+            shooter.setShooterVelocity(350);
             return false;
         }
     }

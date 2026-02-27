@@ -19,7 +19,7 @@ public class Kicker {
 
         @Override
         public boolean run(@NonNull TelemetryPacket telemetryPacket){
-            kicker.setPosition(0.74);
+            kicker.setPosition(0.0);
             return false;
         }
     }
@@ -28,7 +28,7 @@ public class Kicker {
 
         @Override
         public boolean run(@NonNull TelemetryPacket telemetryPacket){
-            kicker.setPosition(1.0);
+            kicker.setPosition(0.22);
             return false;
         }
     }

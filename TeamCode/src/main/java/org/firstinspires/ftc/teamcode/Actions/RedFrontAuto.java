@@ -11,8 +11,8 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.teamcode.MecanumDrive;
 import org.firstinspires.ftc.teamcode.ShooterSubsystem;
 
-@Autonomous(name="RedRearAuto")
-public class RedRearAuto extends LinearOpMode {
+@Autonomous(name="RedFrontAuto")
+public class RedFrontAuto extends LinearOpMode {
 
     Transfer transfer;
     Intake intake;
@@ -29,7 +29,7 @@ public class RedRearAuto extends LinearOpMode {
         Kicker kicker = new Kicker(hardwareMap);
 
 
-        Pose2d initialPose = new Pose2d(62.4,15.2, Math.toRadians(180));
+        Pose2d initialPose = new Pose2d(-62.4,35.0, Math.toRadians(0));
         MecanumDrive drive = new MecanumDrive(hardwareMap, initialPose);
 
         shooter.shoot(true);
@@ -44,15 +44,17 @@ public class RedRearAuto extends LinearOpMode {
 
         Actions.runBlocking(
                 drive.actionBuilder(initialPose)
-                        .strafeToLinearHeading(new Vector2d(61.0,11.8),Math.toRadians(153))
+                        .strafeToLinearHeading(new Vector2d(-47.0,32.0),Math.toRadians(225))
                         .stopAndAdd(new SequentialAction(intake.intakeCollect(),
                                 new SleepAction(1.5), transfer.transferPass(),new SleepAction(3),
                                 kicker.artifactRelease(),
                                 new SleepAction(2.8),transfer.transferOff(),kicker.artifactCollect(),
                                 new SleepAction(0.5)
                         ))
-                        .strafeToLinearHeading(new Vector2d(29.8,26.2),Math.toRadians(90))
-                        .strafeToLinearHeading(new Vector2d(29.3,45.0),Math.toRadians(90))
+                        .strafeToLinearHeading(new Vector2d(-12.0,26.2),Math.toRadians(270))
+                        .strafeToLinearHeading(new Vector2d(-12.5,33.0),Math.toRadians(270))
+                        .strafeToLinearHeading(new Vector2d(-12.5,40.0),Math.toRadians(270))
+                        .strafeToLinearHeading(new Vector2d(-12.5,45),Math.toRadians(270))
                         .build()
         );
     }

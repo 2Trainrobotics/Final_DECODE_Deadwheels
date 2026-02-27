@@ -60,8 +60,8 @@ ShooterSubsystem shooter;
 
     // Here we declare the double positions for the kicker:
 
-    final double ARTIFACT_SHOOT = 1.0;
-    final double ARTIFACT_COLLECT = 0.74;
+    final double ARTIFACT_SHOOT = 0.18;
+    final double ARTIFACT_COLLECT = 0.0;
     public static double HOOD = 0.0;
 
     // Here we declare the turret servo with a gradual increment mode:
