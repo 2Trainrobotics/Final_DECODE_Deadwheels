@@ -7,19 +7,35 @@ import com.acmerobotics.roadrunner.Action;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
+import org.firstinspires.ftc.teamcode.ShooterSubsystem;
+
 public class Shooter {
+    ShooterSubsystem shooter;
 
-    DcMotor shooter;
-
-    public Shooter(HardwareMap map) {
-        shooter = map.get(DcMotor.class,"shooter");
+    public Shooter(ShooterSubsystem shooter) {
+        this.shooter = shooter;
     }
 
-    public class ShooterHighRange implements Action {
+
+
+    public class ShootClose implements Action {
+
+
 
         @Override
         public boolean run(@NonNull TelemetryPacket telemetryPacket) {
-            shooter.setPower(0.8);
+            shooter.setShooterVelocity(1250);
+            return false;
+        }
+    }
+
+    public class ShootFar implements Action {
+
+
+
+        @Override
+        public boolean run(@NonNull TelemetryPacket telemetryPacket) {
+            shooter.setShooterVelocity(1500);
             return false;
         }
     }
@@ -28,13 +44,16 @@ public class Shooter {
 
         @Override
         public boolean run(@NonNull TelemetryPacket telemetryPacket) {
-            shooter.setPower(0);
+            shooter.setShooterVelocity(0);
             return false;
         }
     }
 
-    public Action shooterHighRange() {
-        return new ShooterHighRange();
+    public Action shootFar() {
+        return new ShootFar();
+    }
+    public Action shootClose() {
+        return new ShootClose();
     }
     public Action shooterOff() {
         return new ShooterOff();
