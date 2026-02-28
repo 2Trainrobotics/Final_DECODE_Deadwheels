@@ -36,7 +36,7 @@ public class RedFrontAuto extends LinearOpMode {
 
         while((!isStopRequested() && !opModeIsActive())){
             shooter.updateShooter();
-            shooter.setShooterVelocity(1800);
+            shooter.setShooterVelocity(1300);
             telemetry.addData("shooter Vel", shooter.getShooterVelocity());
             telemetry.update();
         }
@@ -44,17 +44,17 @@ public class RedFrontAuto extends LinearOpMode {
 
         Actions.runBlocking(
                 drive.actionBuilder(initialPose)
-                        .strafeToLinearHeading(new Vector2d(-47.0,32.0),Math.toRadians(225))
+                        .strafeToLinearHeading(new Vector2d(-47.0,32.0),Math.toRadians(135))
                         .stopAndAdd(new SequentialAction(intake.intakeCollect(),
                                 new SleepAction(1.5), transfer.transferPass(),new SleepAction(3),
                                 kicker.artifactRelease(),
                                 new SleepAction(2.8),transfer.transferOff(),kicker.artifactCollect(),
                                 new SleepAction(0.5)
                         ))
-                        .strafeToLinearHeading(new Vector2d(-12.0,26.2),Math.toRadians(270))
-                        .strafeToLinearHeading(new Vector2d(-12.5,33.0),Math.toRadians(270))
-                        .strafeToLinearHeading(new Vector2d(-12.5,40.0),Math.toRadians(270))
-                        .strafeToLinearHeading(new Vector2d(-12.5,45),Math.toRadians(270))
+                        .strafeToLinearHeading(new Vector2d(-12.0,26.2),Math.toRadians(100))
+                        .strafeToLinearHeading(new Vector2d(-12.5,33.0),Math.toRadians(100))
+                        .strafeToLinearHeading(new Vector2d(-12.5,40.0),Math.toRadians(100))
+                        .strafeToLinearHeading(new Vector2d(-12.5,45),Math.toRadians(100))
                         .build()
         );
     }

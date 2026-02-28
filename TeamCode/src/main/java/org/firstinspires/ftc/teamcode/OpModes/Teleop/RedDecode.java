@@ -12,9 +12,9 @@ import com.qualcomm.robotcore.hardware.Servo;
 
 import org.firstinspires.ftc.teamcode.ShooterSubsystem;
 
-@TeleOp(name = "RangeTest", group = "FTC")
+@TeleOp(name = "Red RangeTest", group = "FTC")
 
-public class Decode extends LinearOpMode {
+public class RedDecode extends LinearOpMode {
 
     // Limelight Camera located in front of the robot:
 
@@ -264,20 +264,17 @@ ShooterSubsystem shooter;
 //                shooter.setPower(0);
 //            }
 
-            if (gamepad2.a) {
-                shooter.setShooterVelocity(1200);
+            if (gamepad2.a) {//11000
+                shooter.setShooterVelocity(1150);
             }
 
-             else if(gamepad2.b) {
-                shooter.setShooterVelocity(1650);
+            else if(gamepad2.b) {
+                shooter.setShooterVelocity(1550);
             }
 
-            else if (gamepad2.y) {
-                shooter.setShooterVelocity(900);
+            else if (gamepad2.y) { // 1000
+                shooter.setShooterVelocity(1000);
             }
-
-
-
 //            double turretIncrement = 0.02;
 
             if (gamepad2.left_bumper) {
@@ -371,4 +368,5 @@ ShooterSubsystem shooter;
         double scale = 3836.092;
         return Math.sqrt(scale / ta) *1.17;
     }
+
 }

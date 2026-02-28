@@ -36,7 +36,7 @@ public class BlueFrontAuto extends LinearOpMode {
 
         while((!isStopRequested() && !opModeIsActive())){
             shooter.updateShooter();
-            shooter.setShooterVelocity(1800);
+            shooter.setShooterVelocity(1300);
             telemetry.addData("shooter Vel", shooter.getShooterVelocity());
             telemetry.update();
         }

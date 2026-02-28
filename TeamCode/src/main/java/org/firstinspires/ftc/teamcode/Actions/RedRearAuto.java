@@ -32,11 +32,12 @@ public class RedRearAuto extends LinearOpMode {
         Pose2d initialPose = new Pose2d(62.4,15.2, Math.toRadians(180));
         MecanumDrive drive = new MecanumDrive(hardwareMap, initialPose);
 
-        shooter.shoot(true);
+
 
         while((!isStopRequested() && !opModeIsActive())){
+            shooter.shoot(true);
             shooter.updateShooter();
-            shooter.setShooterVelocity(1800);
+            shooter.setShooterVelocity(1350);
             telemetry.addData("shooter Vel", shooter.getShooterVelocity());
             telemetry.update();
         }

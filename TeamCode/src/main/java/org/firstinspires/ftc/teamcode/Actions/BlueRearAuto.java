@@ -36,7 +36,7 @@ public class BlueRearAuto extends LinearOpMode {
 
         while((!isStopRequested() && !opModeIsActive())){
             shooter.updateShooter();
-            shooter.setShooterVelocity(1800);
+            shooter.setShooterVelocity(1700);
             telemetry.addData("shooter Vel", shooter.getShooterVelocity());
             telemetry.update();
         }
