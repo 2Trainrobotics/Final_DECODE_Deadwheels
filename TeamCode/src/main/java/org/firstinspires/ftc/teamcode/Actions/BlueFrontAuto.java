@@ -29,7 +29,7 @@ public class BlueFrontAuto extends LinearOpMode {
         Kicker kicker = new Kicker(hardwareMap);
 
 
-        Pose2d initialPose = new Pose2d(-62.4,-35.0, Math.toRadians(0));
+        Pose2d initialPose = new Pose2d(-54.6,-49.0, Math.toRadians(225));
         MecanumDrive drive = new MecanumDrive(hardwareMap, initialPose);
 
         shooter.shoot(true);
